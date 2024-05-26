@@ -9,6 +9,7 @@
   - [Relay board](#relay_board)
   - [Isolators](#isolators)
 5. [Mechanical constructions](#Mechanical_construction)  
+6. [Bringup](#Bringup)
 # Overview 
 
 lineScope is an oscilloscope attachment for  safe measurement of AC lines. Two current ranges (0.5A/5A) and one voltage range (260V) are supported. 
@@ -36,7 +37,7 @@ The lineScope construction is fully modular, so range can be change easily just 
 
 ## Current measurement
 - Measurement range `5A` or `0.5A`
-- `DUT` current to output voltage `3mV/mA` for `0.5A` range; `300mV/A` for `5A` range
+- `DUT` current to output voltage `1 mA/mV` for `0.5A` range; `10 mA/mV` for `5A` range
 - Output noise level `<2mV`
 - Frequency response 10Hz - 10kHz<!-- Need to be checked against real device-->
 - Dielectric strength `2kV 1min`
@@ -164,18 +165,20 @@ For HV standard 6.3mm tab connectors are used, for low voltage/control JST-XH co
 
 Connectors pinout at presented in table bellow
 
-| Designator | Pin | Description          |
-| ---------- | --- | -------------------- |
-| J1         | 1   | Neutral in           |
-| J3         | 1   | Neutral out          |
-| J2         | 1   | Line out             |
-| J4         | 1   | Line high current in |
-| J6         | 1   | Line low current in  |
-| J5         | 1   | VCC                  |
-| J5         | 2   | Line `ON/OFF`        |
-| J5         | 3   | Range selection      |
-| J5         | 4   | Neutral `ON/OFF`     |
-| J5         | 5   | GND                  |
+| Designator | Pin | Description            |
+| ---------- | --- | ---------------------- |
+| J1         | 1   | Neutral in             |
+| J3         | 1   | Neutral out            |
+| J2         | 1   | Line out               |
+| J4         | 1   | Line high current in   |
+| J6         | 1   | Line low current in    |
+| J5         | 1   | VCC                    |
+| J5         | 2   | Line `ON/OFF`          |
+| J5         | 3   | Range selection        |
+| J5         | 4   | Neutral `ON/OFF`       |
+| J5         | 5   | GND                    |
+| J7         | 1   | AC Power (low voltage) |
+| J7         | 2   | AC Power (low voltage) |
 ## Isolator board
 
 ### Overview 
@@ -186,27 +189,232 @@ Voltage probe must be connected to the `J3` connector, current probes must be co
 
 ### Connectors 
 
-| Designator | Pin | Description          |     |
-| ---------- | --- | -------------------- | --- |
-| J1         | 1   | AC power grid side   |     |
-| J1         | 2   | AC power grid side   |     |
-| J2         | 1   | AC power scope side  |     |
-| J2         | 2   | AC power scope side  |     |
-| J3         | 1   | Voltage probe signal |     |
-| J3         | 2   | Voltage probe GND    |     |
-| J3         | 3   | Voltage probe GND    |     |
-| J4         | 1   | Current probe signal |     |
-| J4         | 2   | Current probe GND    |     |
-| J4         | 3   | Current probe GND    |     |
-| J5         | 1   | Current probe signal |     |
-| J5         | 2   | Current probe GND    |     |
-| J5         | 3   | Current probe GND    |     |
-| J7         | 1   | Voltage output hot   |     |
-| J7         | 2   | Voltage output cold  |     |
-| J8         | 1   | Current output hot   |     |
-| J8         | 2   | Current output cold  |     |
+| Designator | Pin | Description               |     |
+| ---------- | --- | ------------------------- | --- |
+| J1         | 1   | AC power grid side        |     |
+| J1         | 2   | AC power grid side        |     |
+| J2         | 1   | AC power scope side       |     |
+| J2         | 2   | AC power scope side       |     |
+| J3         | 1   | Voltage probe signal      |     |
+| J3         | 2   | Voltage probe GND         |     |
+| J3         | 3   | Voltage probe GND         |     |
+| J4         | 1   | Current probe signal      |     |
+| J4         | 2   | Current probe GND         |     |
+| J4         | 3   | Current probe GND         |     |
+| J5         | 1   | Current probe signal      |     |
+| J5         | 2   | Current probe GND         |     |
+| J5         | 3   | Current probe GND         |     |
+| J7         | 1   | Voltage output hot        |     |
+| J7         | 2   | Voltage output cold       |     |
+| J8         | 1   | Current output hot        |     |
+| J8         | 2   | Current output cold       |     |
+| J9         | 1   | VCC2                      |     |
+| J9         | 2   | Select probe low current  |     |
+| J9         | 3   | Select probe high current |     |
+| J9         | 4   | GND                       |     |
 
 # Mechanical Construction 
+
+# Bringup
+
+Bringup was descried [[Bringup | here]] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
